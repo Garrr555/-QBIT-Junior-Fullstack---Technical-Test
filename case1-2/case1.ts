@@ -21,11 +21,21 @@ function getFruitNames() {
   return fruits.map((f) => f.fruitName);
 }
 
+function getName() {
+  const sameName = Array.from(
+    new Set(fruits.map((f) => f.fruitName.toLowerCase()))
+  );
+
+  return sameName.sort((a, b) => a.localeCompare(b));
+}
+
 // 2. Pisahkan buah ke dalam wadah berdasarkan tipe
 function groupByFruitType() {
   const result: Record<string, string[]> = {};
   for (const fruit of fruits) {
-    if (!result[fruit.fruitType]) result[fruit.fruitType] = [];
+    if (!result[fruit.fruitType]) {
+      result[fruit.fruitType] = [];
+    }
     result[fruit.fruitType].push(fruit.fruitName);
   }
   return result;
@@ -35,7 +45,9 @@ function groupByFruitType() {
 function stockByFruitType() {
   const result: Record<string, number> = {};
   for (const fruit of fruits) {
-    if (!result[fruit.fruitType]) result[fruit.fruitType] = 0;
+    if (!result[fruit.fruitType]) {
+      result[fruit.fruitType] = 0;
+    }
     result[fruit.fruitType] += fruit.stock;
   }
   return result;
@@ -55,3 +67,5 @@ console.log("1. Buah Andi:", getFruitNames());
 console.log("2. Group by tipe:", groupByFruitType());
 console.log("3. Total stock:", stockByFruitType());
 console.log("4. Komentar:", commentCase1());
+
+console.log("5. test:", getName());
