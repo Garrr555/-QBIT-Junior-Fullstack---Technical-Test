@@ -1,0 +1,12 @@
+{
+  "name": "case1-2",
+  "version": "1.0.0",
+  "scripts": {
+    "case1": "ts-node case1.ts",
+    "case2": "ts-node case2.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}

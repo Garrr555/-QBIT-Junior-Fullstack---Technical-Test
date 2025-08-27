@@ -1,0 +1,15 @@
+:root {
+  --primary: #1E3A8A;   /* biru navy */
+  --secondary: #F59E0B; /* kuning amber */
+  --light: #F3F4F6;     /* abu muda */
+  --dark: #111827;      /* abu tua */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
